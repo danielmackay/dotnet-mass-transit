@@ -1,6 +1,6 @@
+using GettingStarted.Consumers;
+using GettingStarted.Contracts;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
@@ -28,6 +28,13 @@ namespace GettingStarted
 
                         x.AddConsumers(entryAssembly);
 
+                        // TODO: Do we need to add consumers explicitly?
+                        x.AddConsumer<CheckOrderStatusConsumer>()
+                            .Endpoint(e => e.Name = "order-status");
+
+                        // Sends the request to the specified address, instead of publishing it
+                        x.AddRequestClient<OrderStatusRequest>(new Uri("exchange:order-status"));
+
                         // NOTE: Sagas are not used for simple messaging
                         // x.AddSagaStateMachines(entryAssembly);
                         // x.AddSagas(entryAssembly);
@@ -39,7 +46,8 @@ namespace GettingStarted
                         x.UsingInMemory((context, cfg) => { cfg.ConfigureEndpoints(context); });
                     });
 
-                    services.AddHostedService<Worker>();
+                    //services.AddHostedService<Worker>();
+                    services.AddHostedService<RequestWorker>();
                 });
     }
 }

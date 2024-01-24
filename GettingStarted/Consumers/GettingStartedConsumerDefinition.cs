@@ -1,9 +1,7 @@
-using GettingStarted.Consumers;
+using MassTransit;
 
-namespace Company.Consumers
+namespace GettingStarted.Consumers
 {
-    using MassTransit;
-
     public class GettingStartedConsumerDefinition :
         ConsumerDefinition<GettingStartedConsumer>
     {
