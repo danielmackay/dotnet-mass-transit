@@ -1,7 +1,6 @@
-namespace GettingStarted.Contracts
+namespace GettingStarted.Contracts;
+
+public record GettingStarted
 {
-    public record GettingStarted
-    {
-        public string Value { get; init; }
-    }
+    public string Value { get; init; }
 }

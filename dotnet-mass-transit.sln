@@ -5,6 +5,19 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStarted", "InMemory\GettingStarted\GettingStarted.csproj", "{CF494EFD-31DE-4913-A629-A5B062E98EE7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InMemory", "InMemory", "{B2EF5BEC-C5F2-46FA-BF17-FB55464AEBE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{296E0431-0655-4D87-A82A-2EFFEB2E7B63}"
+	ProjectSection(SolutionItems) = preProject
+		RabbitMQ\readme.md = RabbitMQ\readme.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer", "RabbitMQ\Consumer\Consumer.csproj", "{D470947B-B1D3-4C57-9CEF-0AF41B2FD93E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producer", "RabbitMQ\Producer\Producer.csproj", "{715D4BDE-74B2-4D90-B7B8-5A0EAEB15595}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "RabbitMQ\Contracts\Contracts.csproj", "{0C0085D1-2988-434C-8CDF-78D0D26B2BAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +31,23 @@ Global
 		{CF494EFD-31DE-4913-A629-A5B062E98EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF494EFD-31DE-4913-A629-A5B062E98EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF494EFD-31DE-4913-A629-A5B062E98EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D470947B-B1D3-4C57-9CEF-0AF41B2FD93E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D470947B-B1D3-4C57-9CEF-0AF41B2FD93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D470947B-B1D3-4C57-9CEF-0AF41B2FD93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D470947B-B1D3-4C57-9CEF-0AF41B2FD93E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{715D4BDE-74B2-4D90-B7B8-5A0EAEB15595}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{715D4BDE-74B2-4D90-B7B8-5A0EAEB15595}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{715D4BDE-74B2-4D90-B7B8-5A0EAEB15595}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{715D4BDE-74B2-4D90-B7B8-5A0EAEB15595}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C0085D1-2988-434C-8CDF-78D0D26B2BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C0085D1-2988-434C-8CDF-78D0D26B2BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C0085D1-2988-434C-8CDF-78D0D26B2BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C0085D1-2988-434C-8CDF-78D0D26B2BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF494EFD-31DE-4913-A629-A5B062E98EE7} = {B2EF5BEC-C5F2-46FA-BF17-FB55464AEBE6}
+		{D470947B-B1D3-4C57-9CEF-0AF41B2FD93E} = {296E0431-0655-4D87-A82A-2EFFEB2E7B63}
+		{715D4BDE-74B2-4D90-B7B8-5A0EAEB15595} = {296E0431-0655-4D87-A82A-2EFFEB2E7B63}
+		{0C0085D1-2988-434C-8CDF-78D0D26B2BAE} = {296E0431-0655-4D87-A82A-2EFFEB2E7B63}
 	EndGlobalSection
 EndGlobal

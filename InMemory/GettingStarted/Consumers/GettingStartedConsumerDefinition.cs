@@ -1,13 +1,12 @@
 using MassTransit;
 
-namespace GettingStarted.Consumers
+namespace GettingStarted.Consumers;
+
+public class GettingStartedConsumerDefinition :
+    ConsumerDefinition<GettingStartedConsumer>
 {
-    public class GettingStartedConsumerDefinition :
-        ConsumerDefinition<GettingStartedConsumer>
+    protected override void ConfigureConsumer(IReceiveEndpointConfigurator endpointConfigurator, IConsumerConfigurator<GettingStartedConsumer> consumerConfigurator)
     {
-        protected override void ConfigureConsumer(IReceiveEndpointConfigurator endpointConfigurator, IConsumerConfigurator<GettingStartedConsumer> consumerConfigurator)
-        {
             endpointConfigurator.UseMessageRetry(r => r.Intervals(500, 1000));
         }
-    }
 }
